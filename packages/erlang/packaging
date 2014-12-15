@@ -6,11 +6,10 @@ set -u # report the usage of uninitialized variables
 # $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
 export HOME=/var/vcap
 
-tar xzf erlang/otp_src_17.4.tgz
-pushd erlang
-  ./configure \
-    --prefix=${BOSH_INSTALL_TARGET}
+tar xfz erlang/otp_src_17.4.tar.gz
+(
+  cd otp_src_17.4
+  ./configure --prefix=$BOSH_INSTALL_TARGET
+  make -j${CPUS} && make install
+)
 
-  make
-  make install
-popd
