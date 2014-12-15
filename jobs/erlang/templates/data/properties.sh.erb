@@ -20,11 +20,12 @@ export DISK_CRITICAL_LEVEL=<%= p("health.disk.critical") %>
 export DISK_WARNING_LEVEL=<%= p("health.disk.warning") %>
 
 # Erlang VM variables
-export PA=/var/vcap/jobs/erlang_vm/ebin
-export LOGFILE=$LOG_DIR/<%= node_name %>.log
-export DIST="-kernel inet_dist_listen_min <%= p(dist_listen_min) %> -kernel inet_dist_listen_max <%= p(dist_listen_max) %>"
-export LOG="-sasl sasl_error_logger \{file,\\\"$LOGFILE\\\"\}" 
+export PA="-pa /var/vcap/packages/erlang/lib/erlang/lib/*/ebin"
+export COOKIE="-setcookie <%= p("node_name") %>"
+export LOGFILE=$LOG_DIR/<%= p("node_name") %>.log
+export DIST="-kernel inet_dist_listen_min <%= p("dist_listen_min") %> -kernel inet_dist_listen_max <%= p("dist_listen_max") %>"
+export LOG="-sasl sasl_error_logger {file,\"$LOGFILE\"}"
 export HOSTNAME=`hostname -s`
-export DETACH="-heart -detached"
+export DETACH="-heart -noshell"
 export NODENAME=<%= p("node_name") %>
-export STOPCMD="rpc:call(${NODENAME}@${HOSTNAME}, init, stop, [])"
+export STOPCMD="rpc:call('${NODENAME}@${BIND_ADDR}', init, stop, [])"

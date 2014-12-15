@@ -4,13 +4,15 @@ set -u # report the usage of uninitialized variables
  # Available variables
 # $BOSH_COMPILE_TARGET - where this package & spec'd source files are available
 # $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
-CPUS=$(grep -c ^processor /proc/cpuinfo)
+export PATH=/var/vcap/packages/erlang/bin:$PATH
+export CPUS=$(grep -c ^processor /proc/cpuinfo)
 export HOME=/var/vcap
 
 tar xfz erlang/otp_src_17.4.tar.gz
 (
   cd otp_src_17.4
   ./configure --prefix=$BOSH_INSTALL_TARGET
+  touch lib/wx/SKIP
   make -j${CPUS} && make install
 )
 

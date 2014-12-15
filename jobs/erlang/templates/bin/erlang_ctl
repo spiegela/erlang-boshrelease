@@ -6,7 +6,6 @@ set -u # report the usage of uninitialized variables
 # Setup env vars and folders for the webapp_ctl script
 source /var/vcap/jobs/erlang/helpers/ctl_setup.sh 'erlang'
 
-export PORT=${PORT:-5000}
 export LANG=en_US.UTF-8
 
 case $1 in
@@ -17,13 +16,13 @@ case $1 in
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
 
-    exec chpst -u vcap:vcap erl -name $NODENAME@$HOSTNAME \
-           -boot start_sasl $LOG -pa $PA $DETACH $DIST
+    exec chpst -u vcap:vcap erl -name $NODENAME@$BIND_ADDR \
+        -boot start_sasl $LOG $COOKIE $DETACH $DIST
     ;;
 
   stop)
-    exec erl -noshell -sname erlang_vm_ctl \
-           -eval $STOPCMD -s init stop
+    exec erl -noshell -name erlang_ctl@127.0.0.1 $COOKIE \
+       -eval "$STOPCMD" -s init stop
     rm $PIDFILE
 
     ;;
