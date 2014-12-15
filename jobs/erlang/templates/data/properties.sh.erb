@@ -14,3 +14,17 @@ export DNS_ROOT=<%= spec.dns_domain_name %>
 
 # $BIND_ADDR is the IP of the first network
 export BIND_ADDR=<%= spec.networks.send(spec.networks.methods(false).first).ip %>
+
+# % disk full levels
+export DISK_CRITICAL_LEVEL=<%= p("health.disk.critical") %>
+export DISK_WARNING_LEVEL=<%= p("health.disk.warning") %>
+
+# Erlang VM variables
+export PA=/var/vcap/jobs/erlang_vm/ebin
+export LOGFILE=$LOG_DIR/<%= node_name %>.log
+export DIST="-kernel inet_dist_listen_min <%= p(dist_listen_min) %> -kernel inet_dist_listen_max <%= p(dist_listen_max) %>"
+export LOG="-sasl sasl_error_logger \{file,\\\"$LOGFILE\\\"\}" 
+export HOSTNAME=`hostname -s`
+export DETACH="-heart -detached"
+export NODENAME=<%= p("node_name") %>
+export STOPCMD="rpc:call(${NODENAME}@${HOSTNAME}, init, stop, [])"

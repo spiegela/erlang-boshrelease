@@ -1,6 +1,7 @@
 ---
 name: erlang
-packages: []
+packages:
+  - erlang
 templates:
   bin/monit_debugger: bin/monit_debugger
   bin/erlang_ctl: bin/erlang_ctl
@@ -11,3 +12,21 @@ templates:
 properties:
   erlang.leader_address:
     description: Hostname/IP to the leader/master of the cluster
+  dist_listen_min:
+    description: Port range start for Erlang Distribution Communication
+    default: 9100
+  dist_listen_max:
+    description: Port range end for Erlang Distribution Communication
+    default:  9115
+  node_name:
+    description: Erlang short name for the created node
+    default: service
+  health.interval:
+    description: Interval for consul to perform health checks
+    default: "20s"
+  health.disk.critical:
+    description: Percentage of persistent disk full to trigger critial health alert
+    default: 98
+  health.disk.warning:
+    description: Percentage of persistent disk full to trigger warning health alert
+    default: 50

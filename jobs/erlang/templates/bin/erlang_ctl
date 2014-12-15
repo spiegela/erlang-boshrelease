@@ -17,14 +17,14 @@ case $1 in
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
 
-    exec chpst -u vcap:vcap erlang \
-         >>$LOG_DIR/$JOB_NAME.stdout.log \
-         2>>$LOG_DIR/$JOB_NAME.stderr.log
-
+    exec chpst -u vcap:vcap erl -name $NODENAME@$HOSTNAME \
+           -boot start_sasl $LOG -pa $PA $DETACH $DIST
     ;;
 
   stop)
-    kill_and_wait $PIDFILE
+    exec erl -noshell -sname erlang_vm_ctl \
+           -eval $STOPCMD -s init stop
+    rm $PIDFILE
 
     ;;
   *)
