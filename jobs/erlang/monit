@@ -1,0 +1,5 @@
+check process erlang
+  with pidfile /var/vcap/sys/run/erlang/erlang.pid
+  start program "/var/vcap/jobs/erlang/bin/monit_debugger erlang_ctl '/var/vcap/jobs/erlang/bin/erlang_ctl start'"
+  stop program "/var/vcap/jobs/erlang/bin/monit_debugger erlang_ctl '/var/vcap/jobs/erlang/bin/erlang_ctl stop'"
+  group vcap
