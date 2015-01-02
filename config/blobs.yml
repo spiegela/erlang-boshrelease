@@ -3,3 +3,7 @@ erlang/otp_src_17.4.tar.gz:
   object_id: 17f9052d-f48d-4efe-bf81-f360f8574d3b
   sha: 2d4cb92499d208a21c5fe2ccf2626290dde40bd8
   size: 66959123
+rebar/rebar-2.5.1.tar.gz:
+  object_id: b5e63d3f-5ead-4e9d-9901-14e7b291ef9e
+  sha: 6ac4c264831e1b671e029c09d2563209903975cf
+  size: 154529
