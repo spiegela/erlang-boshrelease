@@ -1,0 +1,5 @@
+---
+name: rebar
+dependencies: []
+files:
+- rebar/rebar-2.5.1.tar.gz
