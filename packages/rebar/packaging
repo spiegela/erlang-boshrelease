@@ -10,4 +10,5 @@ export PATH=$PATH:/var/vcap/packages/erlang/bin
 tar xfv rebar/rebar-2.5.1.tar.gz
 cd rebar
 ./bootstrap
-cp -a rebar $BOSH_INSTALL_TARGET
+mkdir -p $BOSH_INSTALL_TARGET/bin
+cp -a rebar $BOSH_INSTALL_TARGET/bin
