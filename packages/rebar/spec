@@ -1,5 +1,6 @@
 ---
 name: rebar
-dependencies: []
+dependencies:
+  - erlang
 files:
-- rebar/rebar-2.5.1.tar.gz
+  - rebar/rebar-2.5.1.tar.gz
