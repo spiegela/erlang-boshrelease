@@ -8,5 +8,5 @@ export HOME=/var/vcap
 export PATH=$PATH:/var/vcap/packages/erlang/bin:/var/vcap/packages/rebar/bin
 
 cd service_agent
-rebar compile generate
+rebar get-deps compile generate
 cp -pR rel/service_agent $BOSH_INSTALL_TARGET
