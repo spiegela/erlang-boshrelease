@@ -2,6 +2,7 @@
 name: erlang
 packages:
   - erlang
+  - rebar
 templates:
   bin/monit_debugger: bin/monit_debugger
   bin/erlang_ctl: bin/erlang_ctl
