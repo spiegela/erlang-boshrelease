@@ -1,0 +1,10 @@
+---
+name: service_agent
+packages:
+  - service_agent
+templates:
+  bin/service_agent_ctl: bin/service_agent_ctl
+  bin/monit_debugger: bin/monit_debugger
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh

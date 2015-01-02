@@ -1,0 +1,5 @@
+check process service_agent
+  with pidfile /var/vcap/sys/run/service_agent/service_agent.pid
+  start program "/var/vcap/jobs/service_agent/bin/monit_debugger service_agent_ctl '/var/vcap/jobs/service_agent/bin/service_agent_ctl start'"
+  stop program "/var/vcap/jobs/service_agent/bin/monit_debugger service_agent_ctl '/var/vcap/jobs/service_agent/bin/service_agent_ctl stop'"
+  group vcap
