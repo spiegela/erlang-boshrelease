@@ -7,3 +7,7 @@ rebar/rebar-2.5.1.tar.gz:
   object_id: b5e63d3f-5ead-4e9d-9901-14e7b291ef9e
   sha: 6ac4c264831e1b671e029c09d2563209903975cf
   size: 154529
+git/git-2.2.1.tar.gz:
+  object_id: 87593dd7-4149-4a47-a2b1-8f7d00b7dfc4
+  sha: e0f776ca3069a292bb379e2cbfd1b34adf886020
+  size: 5147032
