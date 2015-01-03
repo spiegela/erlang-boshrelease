@@ -10,6 +10,5 @@ export HOME=/var/vcap
 
 tar xfv git/git-2.2.1.tar.gz
 cd git-2.2.1
-make configure
 ./configure --prefix=${BOSH_INSTALL_TARGET}
 make -j${CPUS} all && make install
