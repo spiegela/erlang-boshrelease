@@ -4,6 +4,7 @@ packages:
   - service_agent
   - rebar
   - erlang
+  - git
 templates:
   bin/service_agent_ctl: bin/service_agent_ctl
   bin/monit_debugger: bin/monit_debugger
