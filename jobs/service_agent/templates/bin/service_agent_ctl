@@ -14,16 +14,15 @@ case $1 in
   start)
     pid_guard $PIDFILE $JOB_NAME
 
-    exec chpst -u vcap:vcap service_agent start
+    /var/vcap/packages/service_agent/bin/service_agent start
 
     # store pid in $PIDFILE
-    echo chpst -u vcap:vcap service_agent getpid > $PIDFILE
+    /var/vcap/packages/service_agent/bin/service_agent getpid > $PIDFILE
 
     ;;
 
   stop)
-    echo chpst -u vcap:vcap service_agent stop
-    rm $PIDFILE
+    /var/vcap/packages/service_agent/bin/service_agent stop && rm $PIDFILE
 
     ;;
   *)

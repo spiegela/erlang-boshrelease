@@ -14,4 +14,4 @@ done
 
 cd service_agent
 rebar get-deps compile generate
-cp -pR rel/service_agent $BOSH_INSTALL_TARGET
+cp -pR rel/service_agent/* $BOSH_INSTALL_TARGET
