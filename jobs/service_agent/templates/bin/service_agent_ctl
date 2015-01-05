@@ -17,7 +17,7 @@ case $1 in
     /var/vcap/packages/service_agent/bin/service_agent start
 
     # store pid in $PIDFILE
-    sleep1 # give it a second...
+    sleep 1 # give it a second...
     /var/vcap/packages/service_agent/bin/service_agent getpid > $PIDFILE
 
     ;;
