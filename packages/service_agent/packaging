@@ -15,3 +15,7 @@ done
 cd service_agent
 rebar get-deps compile generate
 cp -pR rel/service_agent/* $BOSH_INSTALL_TARGET
+
+cp -pR ${BOSH_INSTALL_TARGET}/lib/service_agent-1/priv/instance_ctl \
+  ${BOSH_INSTALL_TARGET}/bin
+chmod +x ${BOSH_INSTALL_TARGET}/bin/instance_ctl
