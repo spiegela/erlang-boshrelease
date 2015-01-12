@@ -1,0 +1,13 @@
+---
+name: service_broker
+packages:
+  - service_broker
+  - rebar
+  - erlang
+  - git
+templates:
+  bin/service_broker_ctl: bin/service_broker_ctl
+  bin/monit_debugger: bin/monit_debugger
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh

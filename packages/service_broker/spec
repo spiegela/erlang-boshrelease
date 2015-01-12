@@ -1,4 +1,7 @@
 ---
 name: service_broker
-dependencies: []
-files: []
+dependencies:
+  - erlang
+  - rebar
+files:
+  - service_broker/**/*
