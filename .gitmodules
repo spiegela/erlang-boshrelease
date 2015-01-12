@@ -1,3 +1,6 @@
 [submodule "src/service_agent"]
 	path = src/service_agent
 	url = /Users/spiegela/src/proj/cf/erlang_service_agent
+[submodule "src/service_broker"]
+	path = src/service_broker
+	url = /Users/spiegela/src/proj/cf/erlang_service_broker
