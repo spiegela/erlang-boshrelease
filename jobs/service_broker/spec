@@ -2,9 +2,6 @@
 name: service_broker
 packages:
   - service_broker
-  - rebar
-  - erlang
-  - git
 templates:
   bin/service_broker_ctl: bin/service_broker_ctl
   bin/monit_debugger: bin/monit_debugger
