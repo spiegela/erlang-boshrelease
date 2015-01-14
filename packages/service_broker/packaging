@@ -7,6 +7,6 @@ set -u # report the usage of uninitialized variables
 export HOME=/var/vcap
 export PATH=$PATH:/var/vcap/packages/erlang/bin:/var/vcap/packages/rebar/bin
  
-cd service_agent
+cd service_broker
 rebar get-deps compile generate
 cp -pR rel/service_broker/* $BOSH_INSTALL_TARGET
