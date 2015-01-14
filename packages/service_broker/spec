@@ -3,5 +3,6 @@ name: service_broker
 dependencies:
   - erlang
   - rebar
+  - git
 files:
   - service_broker/**/*
