@@ -14,11 +14,11 @@ case $1 in
   start)
     pid_guard $PIDFILE $JOB_NAME
 
-    /var/vcap/packages/service_broker/bin/service_broker start
+    PORT=80 /var/vcap/packages/service_broker/bin/service_broker start
 
     # store pid in $PIDFILE
     sleep 1 # give it a second...
-    PORT=80 AGENTS=/var/vcap/packages/service_broker/bin/service_broker getpid > $PIDFILE
+    /var/vcap/packages/service_broker/bin/service_broker getpid > $PIDFILE
 
     ;;
 
