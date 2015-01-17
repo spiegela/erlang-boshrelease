@@ -8,6 +8,8 @@ source /var/vcap/jobs/service_broker/helpers/ctl_setup.sh 'service_broker'
 
 export PORT=${PORT:-80}
 export LANG=en_US.UTF-8
+export BIND_ADDR
+export PIDFILE
 
 case $1 in
 
@@ -19,7 +21,7 @@ case $1 in
     ;;
 
   stop)
-    /var/vcap/packages/service_agent/bin/service_agent stop && rm $PIDFILE
+    /var/vcap/packages/service_broker/bin/service_broker stop && rm $PIDFILE
 
     ;;
   *)

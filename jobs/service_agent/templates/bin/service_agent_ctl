@@ -7,6 +7,9 @@ set -u # report the usage of uninitialized variables
 source /var/vcap/jobs/service_agent/helpers/ctl_setup.sh 'service_agent'
 
 export LANG=en_US.UTF-8
+export BIND_ADDR
+export PIDFILE
+export LEADER
 
 case $1 in
 
