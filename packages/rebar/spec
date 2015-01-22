@@ -2,6 +2,5 @@
 name: rebar
 dependencies:
   - erlang
-  - git
 files:
   - rebar/rebar-2.5.1.tar.gz
